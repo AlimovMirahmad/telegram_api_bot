@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>detal</title>
+    {% for fed in feed %}
+        <h1>User Messege :{{ fed.body }}</h1>
+        <h5>{{ fed.created_at }}</h5>
+    {% endfor %}
+</head>
+<body>
+    {% for i in sms %}
+        <h1>Auther Messege :{{ i.body }}</h1>
+        <h5>{{ i.created_at }}</h5>
+    {% endfor %}
+<form method="Post">
+    {% csrf_token %}
+    <div class="input-group mb-3">
+        <input name="body" type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+    </div>
+</form>
+</body>
+</html>
